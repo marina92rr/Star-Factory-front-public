@@ -1,0 +1,33 @@
+html, body, #root { height: 100%; margin:0; }
+
+:root { --navbar-h: 56px; } /* ajusta a tu Navbar */
+
+.app-shell{
+  min-height: calc(100vh - var(--navbar-h));
+  margin-top: var(--navbar-h);
+}
+
+.app-content{
+  min-height: calc(100vh - var(--navbar-h));
+  padding-left: 180px;      /* espacio para el sidebar fijo */
+  padding-bottom: 80px;
+}
+
+/* opcional si quieres scroll en el menú largo */
+.sidebar { overflow-y: auto; max-height: 100%; }
+
+/* Animación para la entrada suave de nuevas vistas */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success {
+  background: '#38b647';
+  color: 'white';
+}
+
+/* SweetAlert2 por encima de react-modal (z-index: 9999) */
+.swal2-container {
+  z-index: 10000 !important;
+}
